@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_DB: docker
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: docker
+
+  server:
+    image: koj3/nf-freelancer:latest
+    command: >
+      sh -c "npm run start:production:all"
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    environment:
+      APP_DATABASE_NAME: docker
+      APP_DATABASE_USER: docker
+      APP_DATABASE_PWD: docker
+      APP_DATABASE_HOST: postgres
+      APP_DATABASE_PORT: 5432
+      APP_DATABASE_TYPE: postgres
+      APP_DATABASE_SYNCHRONIZE: false
+      APP_DATABASE_SCHEMA: nf_freelancer
+      APP_CIPHER_KEY: F55AA3FC090E14EDEA705861FABABB39B7C4254B469661EC2B206F648DC97B3A
+      APP_CIPHER_IV: 8E13284218D11C47F60A4A9D038F8C7D
+      APP_CIPHER_METHOD: AES-256-CBC
+      APP_JWT_SECRET_KEY: 0ZUc1EBgexhT0JoCEWwq2UmsuFNkLnFsRmOFuuiBpulos0OYZkPJZjZW5yC0dLdK

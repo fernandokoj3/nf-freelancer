@@ -1,0 +1,8 @@
+name,email,ein,company_name,phone_number,password
+ADMIN,admin@nffreelancer.com,00000000000000,ADMIN,,admin
+USER,user@nffreelancer.com,07485479000142,USER,,Teste@1234
+USER2,user2@nffreelancer.com,31167103000174,USER2,,Teste@1234
+USER3,user3@nffreelancer.com,00924445000168,USER3,,Teste@1234
+USER4,user4@nffreelancer.com,45313338000131,USER4,,Teste@1234
+USER5,user5@nffreelancer.com,87090357000196,USER5,,Teste@1234
+USER6,user6@nffreelancer.com,25334430000170,USER6,,Teste@1234

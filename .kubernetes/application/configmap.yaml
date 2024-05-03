@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fair-api-configmap
+data:
+  NODE_ENV: production
+  APP_DATABASE_NAME: postgres
+  APP_DATABASE_USER: postgres
+  APP_DATABASE_HOST: database-service
+  APP_DATABASE_PORT: "5432"
