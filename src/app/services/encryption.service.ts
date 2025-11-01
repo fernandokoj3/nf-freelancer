@@ -5,13 +5,11 @@ import { CRYPTO_OPTIONS } from '@/utils/constants';
 
 @Service()
 export class EncryptionService {
-  constructor() {}
-
   public encrypt(input: string): string {
     const cipher = crypto.createCipheriv(
       CRYPTO_OPTIONS.APP_CIPHER_METHOD,
-      Buffer.from(CRYPTO_OPTIONS.APP_CIPHER_KEY, 'hex'),
-      Buffer.from(CRYPTO_OPTIONS.APP_CIPHER_IV, 'hex'),
+      Buffer.from(CRYPTO_OPTIONS.APP_CIPHER_KEY, 'hex') as any,
+      Buffer.from(CRYPTO_OPTIONS.APP_CIPHER_IV, 'hex') as any,
     );
     return Buffer.from(
       cipher.update(input, 'utf8', 'hex') + cipher.final('hex'),
@@ -22,8 +20,8 @@ export class EncryptionService {
     const buff = Buffer.from(input, 'base64');
     const decipher = crypto.createDecipheriv(
       CRYPTO_OPTIONS.APP_CIPHER_METHOD,
-      Buffer.from(CRYPTO_OPTIONS.APP_CIPHER_KEY, 'hex'),
-      Buffer.from(CRYPTO_OPTIONS.APP_CIPHER_IV, 'hex'),
+      Buffer.from(CRYPTO_OPTIONS.APP_CIPHER_KEY, 'hex') as any,
+      Buffer.from(CRYPTO_OPTIONS.APP_CIPHER_IV, 'hex') as any,
     );
     return (
       decipher.update(buff.toString('utf8'), 'hex', 'utf8') +

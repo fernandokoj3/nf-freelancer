@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import { NextFunction, Request, Response } from 'express';
 import { Settings } from '@/domain/settings';
 import { HttpStatusCode } from '@/domain/verbs';

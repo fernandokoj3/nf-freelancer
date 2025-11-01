@@ -10,7 +10,7 @@ import {
   getUrlParamValidator,
 } from '@/middlewares/handler.validation';
 import { ExpenseService } from '@/services/v1/expense.service';
-import { Controller, Delete, Get, Post, Put } from '@/utils/inject.utils';
+import { Controller, Delete, Post, Put } from '@/utils/inject.utils';
 import { Request, Response } from 'express';
 
 @Controller('/expenses', authorizer)

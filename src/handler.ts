@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 
 import 'express-async-errors';
-import express, { Express, Request, Response } from 'express';
+import express, { Express } from 'express';
 import { injectConnection } from '@/database/data-source';
 import router from '@/utils/inject.utils';
 import { BASE_PATH } from '@/utils/constants';

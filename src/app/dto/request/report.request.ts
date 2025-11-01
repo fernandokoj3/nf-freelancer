@@ -1,6 +1,6 @@
 import { Expose } from 'class-transformer';
 import { Sortable } from './base/page.base.request';
-import { IsDefined, IsEnum, IsNumber, Max, Min } from 'class-validator';
+import { IsDefined, IsEnum, IsNumber, Max } from 'class-validator';
 import { IsValidYear } from '@/middlewares/custom.validation';
 
 export enum RevenueByMonthOrder {

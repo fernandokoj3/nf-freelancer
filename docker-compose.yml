@@ -12,7 +12,9 @@ services:
       POSTGRES_PASSWORD: docker
 
   server:
-    image: koj3/nf-freelancer:latest
+    # image: koj3/nf-freelancer:latest
+    build:
+      context: ./
     command: >
       sh -c "npm run start:production:all"
     ports:

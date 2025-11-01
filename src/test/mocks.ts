@@ -1,4 +1,3 @@
-import { Region } from '@/domain/region';
 import { faker } from '@faker-js/faker';
 import { AuthRequest } from '@/dto/request/auth.request';
 import {
